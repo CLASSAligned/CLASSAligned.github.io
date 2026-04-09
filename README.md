@@ -1,2 +1,2 @@
-# CLASSAligned.github.io
-An extraordinary group from Elizabeth City State University working to innovate the future of Artificail Intellignece in education.
+This website is for the Elizabeth City State University ADMI TEAM 2026. 
+The site will contain all of the researched information and the product of this project.
