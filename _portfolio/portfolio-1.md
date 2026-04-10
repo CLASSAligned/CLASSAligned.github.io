@@ -1,6 +1,8 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Jeaime Powell"
+excerpt: "Jeamie is an IT professional with diverse experience across multiple industries, bringing a strong ability to quickly adapt to new technologies and evolving project needs. Known for exceptional problem-solving skills and attention to detail, he excels at designing efficient solutions and managing complex workflows.
+As the Lead Team Coordinator on this project, Jeamie oversaw team organization, facilitated communication, and ensured tasks remained aligned and on schedule. He’s played a central role in coordinating development efforts, supporting team members, and helping translate ideas into structured execution. His leadership, multitasking ability, and collaborative mindset were key to maintaining momentum and delivering a cohesive final product.
+<br/><img src='/Users/q1mora/Downloads/jeaime.jpg'>"
 collection: portfolio
 ---
 
