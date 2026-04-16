@@ -1,5 +1,5 @@
 ---
-permalink: /CLASSALIGNED26/markdown/
+permalink: /guide/
 title: "CLASS AlignED - Project Guide"
 author_profile: true
 redirect_from:
