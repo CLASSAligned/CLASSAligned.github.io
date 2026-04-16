@@ -13,6 +13,43 @@ CLASS AlignED is an AI-powered system that helps educators align course design w
 
 ---
 
+# Project documents (PDFs in `/src/`)
+
+The following PDFs live **at the root** of the repository’s [`src/`](https://github.com/CLASSAligned/CLASSAligned.github.io/tree/main/src) folder (not every PDF nested under project subfolders there). Titles and descriptions are taken from each document’s metadata and text (abstract, syllabus header, policy summary, or tech-stack outline).
+
+| Title | File | Description |
+|:------|:-----|:------------|
+| **CLASS AlignED Tech Stack** | [PDF](/src/CLASS%20AlignED%20Tech%20Stack.pdf) | Short architecture brief comparing a “university IT–friendly” stack: Zotero + Better BibTeX for reference ingestion; Python (pydantic, pandas) with PDF/text extraction; OpenAI embeddings with **Postgres + pgvector**; **LlamaIndex** for RAG; **FastAPI** + **Next.js** (or React) for the app, with notes on reranking and operating at faculty scale. |
+| **Bridging Policy and Practice: The CLASS AlignED Framework for Responsible AI Integration in Higher Education** (7-page) | [PDF](/src/CLASS_AlignED_ADMI26-Paper.pdf) | ADMI26 research paper presenting the **CLASS AlignED** framework: faculty-centered, policy-aware design that combines automated syllabus analysis, learning-objective alignment, computational resource mapping, and institutional AI governance checks to produce actionable teaching recommendations, with emphasis on AI, HPC, and Science Gateways in undergraduate curricula. |
+| **Bridging Policy and Practice: The CLASS AlignED Framework for Responsible AI Integration in Higher Education** (extended) | [PDF](/src/CLASS_AlignED_ADMI26-Paper%20(1).pdf) | Longer edition of the same paper (additional material beyond the 7-page version), covering the same framework, methodology, and contribution with more detail. |
+| **MATA 621 — Applied Ordinary Differential Equations (Spring 2026)** | [PDF](/src/MATA%20621%20Applied%20Ordinary%20Dif%20Equations%20Spring%202026.pdf) | Tentative **3-credit online** syllabus: instructor Dr. Weizheng Gao; supplemental Zill & Cullen differential-equations text; **MATLAB** required; policies, schedule, and course requirements for the differential equations course. |
+| **BIOL 443 (Section D3) — Principles of Immunology** | [PDF](/src/Principles%20of%20Immunology.pdf) | Course syllabus for the immunology survey: instructor Dr. Preety Panwar, credit hours, virtual contact expectations, and overview of course topics and policies. |
+| **BIOL 443 (Section D3) — Principles of Immunology** (copy) | [PDF](/src/Principles%20of%20Immunology%20copy.pdf) | Same syllabus content as the file above (duplicate copy in `src/`). |
+| **Artificial Intelligence Governance: UNC System Framework and ECSU Policies** | [PDF](/src/School%20AI%20Usage%20Policy%20for%20ECSU_UNC%20System.pdf) | Policy-oriented document summarizing how **generative AI** is governed under the **UNC System** and at **ECSU**: academic integrity, student conduct, syllabus-level rules, library and instructional guidance, and IT/data-security considerations. |
+| **Artificial Intelligence Governance: UNC System Framework and ECSU Policies** (copy) | [PDF](/src/School%20AI%20Usage%20Policy%20for%20ECSU_UNC%20System%20(1).pdf) | Same policy summary as the row above (duplicate copy in `src/`). |
+
+---
+
+## Program source files (`src/`)
+
+The table below describes **authored** program and configuration files under [`src/`](https://github.com/CLASSAligned/CLASSAligned.github.io/tree/main/src): the Streamlit demo app, Colab notebooks for the MVP pipeline, dependency pins, and GraphRAG workspace text configs. Large generated outputs (JSON under `processed/`, vector DB files, caches) are not listed.
+
+| Path | Description |
+|:-----|:------------|
+| [`src/README.md`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/README.md) | Top-level project documentation: problem/solution overview, tech stack, how to run GraphRAG CLI and the Streamlit UI, and environment setup (`GEMINI_API_KEY`, virtualenv). |
+| [`CLASS_ALIGNED_MVP_UI_DEMO/requirements.txt`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/CLASS_ALIGNED_MVP_UI_DEMO/requirements.txt) | Python dependencies for the UI demo: **Streamlit**, **pypdf**, **python-docx**, **python-dotenv**, **google-genai**. |
+| [`CLASS_ALIGNED_MVP_UI_DEMO/app/streamlit_app.py`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/CLASS_ALIGNED_MVP_UI_DEMO/app/streamlit_app.py) | **Streamlit** entrypoint: file upload for syllabus (PDF/DOCX) and policy (PDF), “Run Analysis” action, and UI sections for course summary, learning outcomes, assessments, policies, AI recommendations, and GraphRAG-style insights (with helpers to format assessment/policy items). |
+| [`CLASS_ALIGNED_MVP_UI_DEMO/app/pipeline.py`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/CLASS_ALIGNED_MVP_UI_DEMO/app/pipeline.py) | **Core processing pipeline**: saves uploads under `raw/`, extracts text from PDF/DOCX, builds chunks and JSON artifacts under `processed/`, calls **Gemini** for structured syllabus/policy extraction, runs **GraphRAG** via subprocess for contextual queries, and assembles results for the UI (paths are parameterized to a project root—defaults in-repo point at a Desktop copy; adjust for your machine). |
+| [`CLASS_ALIGNED_MVP_UI_DEMO/app/config.py`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/CLASS_ALIGNED_MVP_UI_DEMO/app/config.py) | Shared **path constants** (`raw/`, `processed/`, GraphRAG workspace), default **Gemini** model name, and env loading—intended as a small config module for imports. |
+| [`CLASS_ALIGNED_MVP_UI_DEMO/app/report_builder.py`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/CLASS_ALIGNED_MVP_UI_DEMO/app/report_builder.py) | Placeholder module for **report/export** building (currently empty; reserved for future formatted faculty reports). |
+| [`CLASS_AlignED_MVP/code/Notebook_One.ipynb`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/CLASS_AlignED_MVP/code/Notebook_One.ipynb) | **Colab** notebook (NB1): mount Drive, install **pypdf** / **python-docx**, extract syllabus text, split into sections and chunks, write `processed/text/*.json`, `processed/chunks/*.jsonl`, and **`processed/manifest.json`** listing each document. |
+| [`CLASS_AlignED_MVP/code/Notebook_Two.ipynb`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/CLASS_AlignED_MVP/code/Notebook_Two.ipynb) | **Colab** notebook (NB2): load manifest and chunks, define a **Gemini** JSON schema for course metadata, outcomes, assessments, policies, relations, and AI teaching recommendations with **chunk_id** evidence, then run extraction per syllabus into `processed/extracted/*_extracted.json`. |
+| [`CLASS_AlignED_MVP/code/Notebook_Three.ipynb`](https://github.com/CLASSAligned/CLASSAligned.github.io/blob/main/src/CLASS_AlignED_MVP/code/Notebook_Three.ipynb) | **Colab** notebook (NB3): set **GraphRAG** workspace paths under `processed/graphrag_workspace`, run **`graphrag init`**, and prepare indexing/query workflows against the chunked syllabus data. |
+| [`.../processed/graphrag_workspace/settings.yaml`](https://github.com/CLASSAligned/CLASSAligned.github.io/tree/main/src/CLASS_AlignED_MVP/processed/graphrag_workspace) | **GraphRAG** workspace configuration (present under both `CLASS_AlignED_MVP` and `CLASS_ALIGNED_MVP_UI_DEMO`): models, chunking, storage, and pipeline options used by `graphrag index` / `graphrag query`. Each project has its own copy next to its prompts and inputs. |
+| [`.../processed/graphrag_workspace/prompts/*.txt`](https://github.com/CLASSAligned/CLASSAligned.github.io/tree/main/src/CLASS_AlignED_MVP/processed/graphrag_workspace/prompts) | **Prompt templates** for GraphRAG (e.g. local/basic/drift/global search, extract graph/claims, community reports, summarization). These text files steer how the graph and retrieval stages behave during indexing and querying. |
+
+---
+
 # Problem
 
 As AI adoption grows in higher education, faculty face a major challenge:
