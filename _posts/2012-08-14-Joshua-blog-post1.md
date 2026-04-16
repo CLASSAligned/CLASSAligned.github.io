@@ -1,5 +1,5 @@
 ---
-title: 'Blog Post number 1'
+title: 'Joshua Harrell - CLASS AlignED: Bridging the Gap Between AI and Policy'
 date: 2026-04-16
 permalink: /posts/2012/08/blog-post-1/
 tags:
