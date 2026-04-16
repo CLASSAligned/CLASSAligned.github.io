@@ -1,5 +1,5 @@
 ---
-title: 'Qimora Mason'
+title: 'Qimora Meyya Mason'
 date: 2026-04-16
 permalink: /posts/2013/08/blog-post-2/
 tags:
@@ -12,12 +12,3 @@ My time at SGX3, under the mentorship of Dr. Hayden and Jeaime Powell, has been 
 
 I’m incredibly grateful to Dr. Hayden, Jeaime Powell, and the entire SGX3 team for the guidance, support, and opportunities they provided. This experience has truly shaped who I am as a professional. 
 
-
-Headings are cool
-======
-
-You can have many headings
-======
-
-Aren't headings cool?
-------
