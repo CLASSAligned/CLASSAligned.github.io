@@ -1,6 +1,6 @@
 ---
-title: 'Suniyah Esey Blog Post'
-date: 2014-08-14
+title: 'Suniyah Esey - CLASS AlignED: AI Policy in Practice and in Growth'
+date: 2026-4-16
 permalink: /posts/2014/08/blog-post-3/
 tags:
   - cool posts
