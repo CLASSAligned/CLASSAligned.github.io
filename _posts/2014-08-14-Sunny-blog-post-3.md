@@ -17,11 +17,3 @@ Seeing our research come together into a final presentation was one of the most 
 Working alongside experienced and talented upperclassmen pushed me to elevate my own abilities. I learned how to communicate ideas more effectively, strengthened my computer science and research skills, and developed a better understanding of interdisciplinary collaboration. Beyond the academic growth, I also gained friendships that I know will last beyond this program. CLASS AlignED not only helped me grow as a student and researcher, but also showed me the value of persistence, teamwork, and stepping into new challenges with confidence.
 
 
-Headings are cool
-======
-
-You can have many headings
-======
-
-Aren't headings cool?
-------
