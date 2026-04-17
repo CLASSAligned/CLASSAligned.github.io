@@ -3,9 +3,9 @@ title: 'Suniyah Esey - CLASS AlignED: AI Policy in Practice and in Growth'
 date: 2026-4-16
 permalink: /posts/2014/08/blog-post-3/
 tags:
-  - cool posts
-  - category1
-  - category2
+  - Coding
+  - HBCU
+  - Women in STEM
 ---
 
 Participating in the CLASS AlignED program has been one of the most defining experiences of my undergraduate journey so far. As a sophomore, I entered the program with a strong curiosity about the intersection of technology and education, along with a growing foundation in computer science. Throughout the experience, I was able to actively contribute to our research on AI policy and classroom practice by helping analyze sources, synthesizing ideas, and supporting the technical and conceptual development of our project. This work challenged me to think more deeply about how AI can be implemented responsibly in educational spaces while also strengthening my ability to approach complex problems with both creativity and structure.
